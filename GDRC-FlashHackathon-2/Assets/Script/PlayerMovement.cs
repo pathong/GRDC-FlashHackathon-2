@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if(moveDir.y != 0){
             rb.AddForce(this.transform.right * moveDir.y * moveSpeed);
-            Debug.Log("move");
         }
         
     }

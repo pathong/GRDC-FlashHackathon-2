@@ -27,4 +27,16 @@ public class CircleBehavior : MonoBehaviour
         Vector3 localScale = transform.localScale;
         transform.localScale = localScale + new Vector3(amount, amount, 0);
     }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+        print("Game over. you exit circle!");
+    }
+/*    void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("You in contact with ");
+    }*/
+
+
+
 }

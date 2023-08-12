@@ -29,8 +29,17 @@ public class CircleBehavior : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        print("Game over. you exit circle!");
+        if(collision.CompareTag("Other"))
+        {
+            Destroy(collision.gameObject);
+        }
+        else if (collision.CompareTag("Player"))
+        {
+            Destroy(collision.gameObject);
+            print("Game over. you exit circle!");
+        }
+        
+        
     }
 /*    void OnTriggerEnter2D(Collider2D collision)
     {

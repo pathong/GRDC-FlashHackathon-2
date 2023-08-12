@@ -21,6 +21,7 @@ public class EventSystem : MonoBehaviour
         duration = 0;
         stopping = true;
         StartCoroutine(startTimer());
+        StartEvent("day");
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class EventSystem : MonoBehaviour
                 EndEvent(currentState);
             }
 
-            timeText.text = "state : " + duration.ToString();
+            timeText.text = currentState + " : " + duration.ToString();
         }
 
     }
@@ -83,6 +84,7 @@ public class EventSystem : MonoBehaviour
         }
         else if (eventName.Equals("choosePlay")){
             int choosing = Choose();
+            Debug.Log("Player has choose " + choosing.ToString());
             if (choosing <= 2) StartEvent("day");
             else StartEvent("chooseNightPlay");
         }

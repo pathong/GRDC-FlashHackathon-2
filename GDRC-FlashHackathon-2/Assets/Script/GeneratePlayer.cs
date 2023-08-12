@@ -15,9 +15,13 @@ public class GeneratePlayer : MonoBehaviour
     public void Generate(){
         for (int i = 0; i < amount; i++)
         {
+            Quaternion randomRot = new Quaternion(0,0,UnityEngine.Random.Range(-1f,1f),1);
             Instantiate(other, 
-                new Vector3(origin.position.x + UnityEngine.Random.Range(-radius,radius), origin.position.y + UnityEngine.Random.Range(-radius,radius), 0), 
-                quaternion.identity
+                new Vector3(
+                    origin.position.x + UnityEngine.Random.Range(-radius,radius), 
+                    origin.position.y + UnityEngine.Random.Range(-radius,radius), 
+                    0),
+                new Quaternion(0,0,UnityEngine.Random.Range(-1f,1f),1)
             );
         }
 

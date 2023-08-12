@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,9 +10,12 @@ public class DayNightCycle : MonoBehaviour
 
     public int duration;
     public string status;
+    public TMP_Text timeText;
 
     private bool stopping = false;
-    private int GAME_DURATION = 10;
+    private int GAME_DURATION = 60;
+    private int eventStartTime;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +44,7 @@ public class DayNightCycle : MonoBehaviour
                 duration = GAME_DURATION;
             }
 
-
+            timeText.text = status + " : " + duration.ToString();
             yield return new WaitForSeconds(1);
         }
 

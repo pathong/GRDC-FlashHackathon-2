@@ -34,9 +34,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        var impulse = (-moveDir.x * rotateSpeed * Mathf.Deg2Rad) * rb.inertia;
-        rb.AddTorque(impulse); 
-        rb.AddForce(this.transform.right * moveDir.y * moveSpeed);
+        if(moveDir.x != 0){
+            var impulse = (-moveDir.x * rotateSpeed * Mathf.Deg2Rad) * rb.inertia;
+            rb.AddTorque(impulse); 
+
+        }
+        if(moveDir.y != 0){
+            rb.AddForce(this.transform.right * moveDir.y * moveSpeed);
+            Debug.Log("move");
+        }
         
     }
 

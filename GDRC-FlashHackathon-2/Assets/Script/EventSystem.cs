@@ -6,11 +6,10 @@ using UnityEngine;
 public class EventSystem : MonoBehaviour
 {
     public GameObject circle, player;
-    public string currentState;
-
     public int duration;
-    public string status;
-    public TMP_Text timeText;
+    public string status, currentState;
+    public TMP_Text timeText, Q1, Q2, Q3, Q4;
+    public Sprite C0, C2, C4;
 
     private bool stopping = false;
     private int eventStartTime;
@@ -62,6 +61,30 @@ public class EventSystem : MonoBehaviour
 
     }
 
+    private void setMassege(string[] msg)
+    {
+        Q1.text = msg[0];
+        Q2.text = msg[1];
+        Q3.text = msg[2];
+        Q4.text = msg[3];
+    }
+
+    private void setCircle(int num)
+    {
+        if(num == 0)
+        {
+            circle.GetComponent<SpriteRenderer>().sprite = C0;
+        }
+        else if(num == 2) 
+        {
+            circle.GetComponent<SpriteRenderer>().sprite = C2;
+        }
+        else if (num == 4)
+        {
+            circle.GetComponent<SpriteRenderer>().sprite = C4;
+        }
+    }
+
     private void EndEvent(string eventName)
     {
         if (eventName.Equals("day"))
@@ -102,12 +125,19 @@ public class EventSystem : MonoBehaviour
     private void StartEvent(string eventName)
     {
         currentState = eventName;
-        if(eventName.Equals("day"))
+        setCircle(0);
+        string[] clearItems = { "", "", "", "" };
+        setMassege(clearItems);
+
+        if (eventName.Equals("day"))
         {
-            duration = 30;
+            duration = 05;
         }
         else if (eventName.Equals("chooseBuff"))
         {
+            setCircle(2);
+            string[] items = { "", "1", "2", "" };
+            setMassege( items );
             duration = 15;
         }
         else if (eventName.Equals("dayEvent"))

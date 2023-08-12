@@ -22,6 +22,9 @@ public class OtherRandomMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
+    private void Start(){
+        StartCoroutine(Detect());
+    }
 
     public void OnMoveTimerHandler(){
         rb.AddForce(transform.right* UnityEngine.Random.Range(moveSpeed.x, moveSpeed.y));

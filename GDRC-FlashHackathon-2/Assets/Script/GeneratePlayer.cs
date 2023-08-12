@@ -24,6 +24,5 @@ public class GeneratePlayer : MonoBehaviour
                 new Quaternion(0,0,UnityEngine.Random.Range(-1f,1f),1)
             );
         }
-
     }
 }

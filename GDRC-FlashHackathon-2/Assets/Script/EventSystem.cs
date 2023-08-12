@@ -32,10 +32,10 @@ public class EventSystem : MonoBehaviour
     public int Choose()
     {
         Vector3 pos = player.transform.position - circle.transform.position;
-        if (pos.x >= 0 && pos.y >= 0) return 1;
-        else if (pos.x < 0 && pos.y >= 0) return 2;
-        else if(pos.x < 0 && pos.y < 0) return 3;
-        else return 4;
+        if (pos.x >= 0 && pos.y >= 0) return 2;
+        else if (pos.x < 0 && pos.y >= 0) return 3;
+        else if(pos.x < 0 && pos.y < 0) return 4;
+        else return 1;
     }
     private IEnumerator startTimer()
     {
@@ -51,8 +51,13 @@ public class EventSystem : MonoBehaviour
                 EndEvent(currentState);
             }
 
-            timeText.text = duration.ToString();
+            timeText.text = "state : " + duration.ToString();
         }
+
+    }
+
+    private void PlayMinigame()
+    {
 
     }
 
@@ -70,7 +75,26 @@ public class EventSystem : MonoBehaviour
         }
         else if (eventName.Equals("dayEvent"))
         {
+            StartEvent("night");
+        }
+        else if (eventName.Equals("night"))
+        {
+            StartEvent("choosePlay");
+        }
+        else if (eventName.Equals("choosePlay")){
+            int choosing = Choose();
+            if (choosing <= 2) StartEvent("day");
+            else StartEvent("chooseNightPlay");
+        }
+        else if (eventName.Equals("chooseNightPlay"))
+        {
+            int choosing = Choose();
+            Debug.Log("Player has choose " + choosing.ToString());
             StartEvent("nightEvent");
+        }
+        else if (eventName.Equals("nightEvent"))
+        {
+            StartEvent("day");
         }
     }
     private void StartEvent(string eventName)
@@ -88,9 +112,20 @@ public class EventSystem : MonoBehaviour
         {
             duration = 60;
         }
-        else if (eventName.Equals("nightEvent"))
+        else if (eventName.Equals("night"))
         {
             duration = 30;
+        }
+        else if (eventName.Equals("choosePlay"))
+        {
+            duration = 10;
+        }
+        else if (eventName.Equals("chooseNightPlay")){
+            duration = 15;
+        }
+        else if (eventName.Equals("nightEvent"))
+        {
+            duration = 90;
         }
         stopping = false;
     }

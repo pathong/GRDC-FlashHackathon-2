@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7837046695174886343}
   - component: {fileID: 8348175676009437512}
   - component: {fileID: 2992983857693364272}
+  - component: {fileID: 7724577531724997262}
   m_Layer: 0
   m_Name: other
   m_TagString: Other
@@ -134,12 +135,6 @@ MonoBehaviour:
   rotateRan: {fileID: 8348175676009437512}
   moveSpeed: {x: 25, y: 70}
   rotateSpeed: {x: 2, y: 5}
-  detectTime: 2
-  detectorOrigin: {fileID: 7435343210996057131}
-  detectRange: 4
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &7837046695174886343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,12 +224,25 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.50000006
+--- !u!114 &7724577531724997262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503213309212722153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a3c243dc101b449a134e5be51e99cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
 --- !u!1 &982964835208565342
 GameObject:
   m_ObjectHideFlags: 0

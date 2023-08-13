@@ -62,7 +62,7 @@ public class GameMachine : MonoBehaviour
     }
 
     public void GameOver(){
-
+        Loader.Load(Loader.Scene.EndScene);
     }
 
 

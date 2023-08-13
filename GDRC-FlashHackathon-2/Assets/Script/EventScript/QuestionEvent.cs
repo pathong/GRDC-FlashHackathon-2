@@ -26,7 +26,8 @@ public class QuestionEvent : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(isWin) Loader.Load(Loader.Scene.NightScene);
+            if (isLose) Loader.Load(Loader.Scene.EndScene);
+            if (isWin) Loader.Load(Loader.Scene.NightScene);
         }
     }
 

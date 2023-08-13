@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     private void TalkHandler(InputAction.CallbackContext context){
-        GameObject other = FindNearest(5);
+        GameObject other = FindNearest(3);
         if(other != null && other.GetComponent<OtherBehaviour>().type == E_FriendType.normal){
             //interact
             other.GetComponent<OtherBehaviour>().StartInteract(this);
@@ -49,10 +49,13 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void PushHandler(InputAction.CallbackContext context){
 
-        GameObject other = FindNearest(5);
+        GameObject other = FindNearest(3);
         if(other != null){
             Vector2 dir = other.transform.position - this.transform.position;
             other.GetComponent<Rigidbody2D>().AddForce(dir*pushForce);
+
+            if(other.GetComponent<OtherBehaviour>().type == E_FriendType.normal)
+                other.GetComponent<OtherBehaviour>().ChangeToEnemy();
         }
     }
 

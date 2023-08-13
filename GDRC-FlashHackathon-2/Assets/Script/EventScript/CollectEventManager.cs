@@ -74,7 +74,11 @@ public class CollectEventManager : MonoBehaviour
 
     private void EndEvent()
     {
-        Loader.Load(Loader.Scene.NightScene);
+        if (score >= 15) {
+            circle.SetActive(false);
+            Loader.Load(Loader.Scene.NightScene); 
+        }
+        else Loader.Load(Loader.Scene.EndScene);
     }
 
     public void AddScore()

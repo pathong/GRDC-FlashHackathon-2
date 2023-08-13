@@ -13,12 +13,25 @@ public class StatSO : ScriptableObject
     public int normal;
     public int enemy;
     public int friend;
+    public int day;
+    public bool isFirstPlay;
     
     public StatSO initialStat;
 
     [ContextMenu("Initial Stat")]
     public void InitializeStat(){
         happiness= initialStat.happiness;
+        money = 0;
+        normal = initialStat.normal;
+        enemy = 0;
+        friend = 0;
+        day = 1;
+        isFirstPlay = true;
+    }
+
+    public void ResetStat()
+    {
+        happiness = initialStat.happiness;
         money = 0;
         normal = initialStat.normal;
         enemy = 0;

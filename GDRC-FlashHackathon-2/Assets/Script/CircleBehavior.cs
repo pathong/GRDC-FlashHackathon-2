@@ -27,7 +27,7 @@ public class CircleBehavior : MonoBehaviour
         Vector3 localScale = transform.localScale;
         transform.localScale = localScale + new Vector3(amount, amount, 0);
     }
-    void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D (Collider2D collision)
     {
         if(collision.CompareTag("Other"))
         {
@@ -36,7 +36,7 @@ public class CircleBehavior : MonoBehaviour
         else if (collision.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            print("Game over. you exit circle!");
+            Loader.Load(Loader.Scene.EndScene);
         }
         
         

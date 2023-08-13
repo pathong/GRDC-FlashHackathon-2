@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happiness: 100
   money: 0
-  normal: 100
+  normal: 60
   enemy: 0
   friend: 0
+  isFirstPlay: 1
   initialStat: {fileID: 11400000}

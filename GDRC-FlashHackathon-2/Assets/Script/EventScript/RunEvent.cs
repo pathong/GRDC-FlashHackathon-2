@@ -62,7 +62,7 @@ public class RunEvent : MonoBehaviour
 
     private void EndEvent()
     {
-
+        circle.SetActive(false);
         Loader.Load(Loader.Scene.NightScene);
     }
 

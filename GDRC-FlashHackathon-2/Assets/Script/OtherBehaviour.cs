@@ -15,8 +15,13 @@ public class OtherBehaviour : MonoBehaviour
         this.GetComponent<OtherRandomMovement>().enabled = false;
         FaceToPlayer(player.transform);
         type = RandomType();
-        
         DialougeManger.instance.StartFriendDialouge(player, this);
+    }
+
+    public void ChangeToEnemy()
+    {
+        type = E_FriendType.enemy;
+        FinishDialouge();
     }
 
     private void FaceToPlayer(Transform target){
@@ -38,6 +43,7 @@ public class OtherBehaviour : MonoBehaviour
                 statSO.ChangeType(E_FriendType.friend);
                 break;
         }
+        this.GetComponent<OtherRandomMovement>().enabled = true;
     }
     private E_FriendType RandomType(){
         float rand = Random.Range(-1f,1f);

@@ -18,9 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/NightScene.unity
     guid: fb6a1f5e3cfc36b4bbea37b220029789
   - enabled: 1
-    path: "Assets/Scenes/Run\u0E3ABars.unity"
-    guid: e35704858adc7ab42a3555480a9bdd13
-  - enabled: 1
     path: Assets/Scenes/CollectChocolate.unity
     guid: d54413fa1a1161c41bd747812ac4d96b
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 7283766e4ac3e2a4c9d40824f347dc35
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 3edb4536743fafb408c878cd526b48dc
+  - enabled: 1
+    path: Assets/Scenes/RunBars.unity
+    guid: e35704858adc7ab42a3555480a9bdd13
   m_configObjects: {}

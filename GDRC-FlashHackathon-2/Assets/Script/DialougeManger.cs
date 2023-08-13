@@ -12,7 +12,7 @@ public class DialougeManger : MonoBehaviour
     [SerializeField] private TMP_Text dialouge2Txt;
     [SerializeField] private string friendSpeech, hateSpeech;
     public static DialougeManger instance;
-    private OtherBehaviour currentOther;
+    public OtherBehaviour currentOther;
     private PlayerInteraction playerInteraction;
     private void Awake() {
         if(instance!=null){
@@ -22,14 +22,12 @@ public class DialougeManger : MonoBehaviour
     }
 
     public void StartFriendDialouge(PlayerInteraction player, OtherBehaviour other) { 
-        this.currentOther = other;
-        UnityEngine.Debug.Log(currentOther);
+        currentOther = other;
         playerInteraction = player;
         dialouge1.SetActive(true);
     }
     public void D1D2(){
         dialouge1.SetActive(false);
-        UnityEngine.Debug.Log(currentOther);
         switch (currentOther.type){
             case E_FriendType.enemy:
                 dialouge2Txt.text = hateSpeech;
@@ -45,7 +43,5 @@ public class DialougeManger : MonoBehaviour
         currentOther.FinishDialouge();
         playerInteraction.FinishDialouge();
         currentOther = null;
-
-
     }
 }

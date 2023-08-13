@@ -9,7 +9,7 @@ public class CollectEventManager : MonoBehaviour
     public TMP_Text timeText, scoreText;
     public GameObject circle, chocolate;
 
-    private int MIN_CHOCOLATE = 100, numChocolate = 0;
+    private int MIN_CHOCOLATE = 25, numChocolate = 0;
 
     // Start is called before the first frame update
     void Start()

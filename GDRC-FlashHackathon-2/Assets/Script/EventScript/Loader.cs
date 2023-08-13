@@ -8,7 +8,7 @@ public static class Loader
 {
     public enum Scene
     {
-        MainScene, Loading, Question, RunBars, CollectChocolate
+        DayScene, NightScene, Loading, Question, RunBars, CollectChocolate
     }
     private static Action onLoaderCallback;
     public static void Load(Scene scene)

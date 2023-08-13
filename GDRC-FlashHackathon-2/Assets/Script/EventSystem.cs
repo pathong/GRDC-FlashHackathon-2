@@ -102,28 +102,9 @@ public class EventSystem : MonoBehaviour
         }
         else if (eventName.Equals("dayEvent"))
         {
-            StartEvent("night");
+            Loader.Load(Loader.Scene.NightScene);
         }
-        else if (eventName.Equals("night"))
-        {
-            StartEvent("choosePlay");
-        }
-        else if (eventName.Equals("choosePlay")){
-            int choosing = Choose();
-            Debug.Log("Player has choose " + choosing.ToString());
-            if (choosing <= 2) StartEvent("day");
-            else StartEvent("chooseNightPlay");
-        }
-        else if (eventName.Equals("chooseNightPlay"))
-        {
-            int choosing = Choose();
-            Debug.Log("Player has choose " + choosing.ToString());
-            StartEvent("nightEvent");
-        }
-        else if (eventName.Equals("nightEvent"))
-        {
-            StartEvent("day");
-        }
+     
     }
     private void StartEvent(string eventName)
     {
@@ -145,22 +126,9 @@ public class EventSystem : MonoBehaviour
         }
         else if (eventName.Equals("dayEvent"))
         {
-            duration = 60;
-        }
-        else if (eventName.Equals("night"))
-        {
-            duration = 30;
-        }
-        else if (eventName.Equals("choosePlay"))
-        {
-            duration = 10;
-        }
-        else if (eventName.Equals("chooseNightPlay")){
-            duration = 15;
-        }
-        else if (eventName.Equals("nightEvent"))
-        {
-            duration = 90;
+            Loader.Scene[] events = { Loader.Scene.Question, Loader.Scene.RunBars, Loader.Scene.CollectChocolate };
+            int random = 0;//Random.Range(0, events.Length);
+            Loader.Load(events[random]);
         }
         stopping = false;
     }

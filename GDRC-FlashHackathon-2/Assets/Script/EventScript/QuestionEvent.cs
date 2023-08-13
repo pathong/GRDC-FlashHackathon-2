@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionEvent : MonoBehaviour
 {
-    public GameObject character, background, dialogueObject, choiceObject;
+    public GameObject character1, character2, background, dialogueObject, choiceObject;
     public TMP_Text dialogue, result;
     public List<TMP_Text> choiceText;
-    public List<Sprite> spriteChar, spriteBack;
+    public List<Sprite> spriteChar1, spriteChar2, spriteBack;
 
     private int lastnum;
     // Start is called before the first frame update
     void Start()
     {
-        PlayQuestion(Random.RandomRange(0, 3));
+        PlayQuestion(3);
+        //PlayQuestion(Random.RandomRange(1, 3));
     }
 
     // Update is called once per frame
@@ -34,8 +36,7 @@ public class QuestionEvent : MonoBehaviour
             choiceText[1].text = "ต่อยมายเนทเมท";
             choiceText[2].text = "บอกมายเนทเมทว่าคุณหลงทาง ที่นี่ที่ไหน";
             choiceText[3].text = "นอนหลับกับมายเนทเมท";
-            //character.GetComponent<SpriteRenderer>().sprite = spriteChar[num - 1];
-            //background.GetComponent<SpriteRenderer>().sprite = spriteChar[num - 1];
+            
         }
         else if(num == 2)
         {
@@ -59,6 +60,9 @@ public class QuestionEvent : MonoBehaviour
             //character.GetComponent<SpriteRenderer>().sprite = spriteChar[num - 1];
             //background.GetComponent<SpriteRenderer>().sprite = spriteChar[num - 1];
         }
+        character1.GetComponent<Image>().sprite = spriteChar1[num - 1];
+        character2.GetComponent<Image>().sprite = spriteChar2[num - 1];
+        background.GetComponent<Image>().sprite = spriteBack[num - 1];
         lastnum = num;
     }
 

@@ -23,7 +23,8 @@ public class DialougeManger : MonoBehaviour
     }
     public void D1D2(){
         dialouge1.SetActive(false);
-        dialouge2Txt.text = (Random.Range(-1,1) > 0) ? friendSpeech : hateSpeech; 
+        float rand = Random.Range(-1f,1f);
+        dialouge2Txt.text = (rand > 0) ? friendSpeech : hateSpeech; 
         dialouge2.SetActive(true);
     }
     public void EndD2(){

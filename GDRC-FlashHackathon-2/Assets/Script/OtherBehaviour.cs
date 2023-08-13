@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal.Internal;
 
+public enum E_FriendType{normal, friend, enemy};
 public class OtherBehaviour : MonoBehaviour
 {
     public string Name;
+    public E_FriendType type = E_FriendType.normal;
     [SerializeField] private float rotationSpeed = 1;
 
     public void StartInteract(GameObject player){

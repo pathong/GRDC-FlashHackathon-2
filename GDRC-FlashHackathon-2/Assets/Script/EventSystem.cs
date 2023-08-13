@@ -115,7 +115,7 @@ public class EventSystem : MonoBehaviour
 
         if (eventName.Equals("day"))
         {
-            duration = 5;
+            duration = 60;
         }
         else if (eventName.Equals("chooseBuff"))
         {

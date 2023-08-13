@@ -25,11 +25,18 @@ public class GameMachine : MonoBehaviour
         rpsObj.SetActive(true);
     }
     public void ToMenu(){
-        if(isStart){return;}
-        isStart = true;
         rpsObj.SetActive(false);
         reward.SetActive(false);
         loose.SetActive(false);
+
+        menuObj.SetActive(true);
+        panel.SetActive(true);
+    }
+
+    public void Open(){
+        if(isStart){return;}
+        isStart = true;
+
         menuObj.SetActive(true);
         panel.SetActive(true);
     }

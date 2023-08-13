@@ -50,6 +50,19 @@ public class StatSO : ScriptableObject
         }
         normal--;
     }
+    public void DecrementPlayer(int amount, E_FriendType type){
+        switch(type){
+            case E_FriendType.normal:
+                normal--;
+                break;
+            case E_FriendType.enemy:
+                enemy--;
+                break;
+            case E_FriendType.friend:
+                friend--;
+                break;
+        }
+    }
 
     public void DecrementPlayer(int amount){
         amount = (int)MathF.Max(amount, friend + enemy + normal);

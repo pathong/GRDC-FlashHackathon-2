@@ -58,6 +58,9 @@ public class GameMachine : MonoBehaviour
     public void Exit(){
         menuObj.SetActive(false);
         panel.SetActive(false);
+        loose.SetActive(false);
+        reward.SetActive(false);
+
         isStart = false;
     }
 
@@ -65,6 +68,10 @@ public class GameMachine : MonoBehaviour
         Loader.Load(Loader.Scene.EndScene);
     }
 
+    public void ToSleep(){
+        statSO.ChangeHappiness(-10);
+        Loader.Load(Loader.Scene.EndScene);
+    }
 
     
 }

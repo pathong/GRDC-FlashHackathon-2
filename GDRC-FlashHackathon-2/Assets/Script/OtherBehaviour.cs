@@ -47,7 +47,7 @@ public class OtherBehaviour : MonoBehaviour
     }
     private E_FriendType RandomType(){
         float rand = Random.Range(-1f,1f);
-        return (rand > 0)? E_FriendType.enemy : E_FriendType.friend;
+        return (rand >= 0)? E_FriendType.enemy : E_FriendType.friend;
 
     }
 

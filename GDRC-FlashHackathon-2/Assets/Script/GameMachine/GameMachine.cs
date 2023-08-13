@@ -1,18 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMachine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    
+    private RPSManager rps;
+    private bool isStart;
+    [SerializeField] GameObject panel;
+    [SerializeField] GameObject menuObj; 
+    [SerializeField] GameObject rpsObj; 
+    [SerializeField] GameObject reward; 
+    [SerializeField] TMP_Text rewardTxt;
+    [SerializeField] GameObject loose; 
+
+    [SerializeField] StatSO statSO;
+
+    private void Start() {
+        isStart = false;
+    }
+    public void ToRPS(){
+        menuObj.SetActive(false);
+        rpsObj.SetActive(true);
+    }
+    public void ToMenu(){
+        if(isStart){return;}
+        isStart = true;
+        rpsObj.SetActive(false);
+        reward.SetActive(false);
+        loose.SetActive(false);
+        menuObj.SetActive(true);
+        panel.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void ToReward(){
+        int r = Random.Range(10, 1000000);
+        statSO.money += r;
+        statSO.ChangeHappiness(20);
+        rewardTxt.text = rewardTxt.text + " " + r.ToString() + " dollars";
+
         
+        rpsObj.SetActive(false); 
+        reward.SetActive(true);
     }
+    public void ToLoose(){
+       rpsObj.SetActive(false); 
+       loose.SetActive(true);
+    }
+
+    public void Exit(){
+        menuObj.SetActive(false);
+        panel.SetActive(false);
+        isStart = false;
+    }
+
+    public void GameOver(){
+
+    }
+
+
+    
 }

@@ -793,6 +793,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Machine",
+                    "type": "Button",
+                    "id": "2fb9045e-d86a-4a0f-89ca-d4d4a1c68372",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -815,6 +824,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Push",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0819b3c4-61ec-4029-8f4a-0a2adacc9097",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Machine",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

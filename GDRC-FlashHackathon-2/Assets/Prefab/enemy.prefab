@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}
-  decrement: 0.2
+  happinessIncrement: 0
   interval: 10
   friendCol: {r: 0.38047346, g: 0.74365884, b: 0.8490566, a: 1}
 --- !u!114 &5984624264626279889
@@ -395,3 +395,5 @@ MonoBehaviour:
   pushForce: 200
   interval: 2
   enemyCol: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
+  happinessIncrement: -0.2
+  stat: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}

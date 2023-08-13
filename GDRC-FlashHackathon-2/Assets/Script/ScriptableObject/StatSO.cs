@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Stat",menuName ="ScriptableObject/Stat")]
 public class StatSO : ScriptableObject 
 {
-    public float Boring;
+    public float happiness;
     public int money;
     public int normal;
     public int enemy;
@@ -18,7 +18,7 @@ public class StatSO : ScriptableObject
 
     [ContextMenu("Initial Stat")]
     public void InitializeStat(){
-        Boring = initialStat.Boring;
+        happiness= initialStat.happiness;
         money = 0;
         normal = initialStat.normal;
         enemy = 0;
@@ -69,6 +69,13 @@ public class StatSO : ScriptableObject
             }
         }
 
+    }
+
+    public void ChangeHappiness(float amount){
+        happiness+= amount;
+        if(happiness > 100){
+            happiness =100;
+        }
     }
 
 

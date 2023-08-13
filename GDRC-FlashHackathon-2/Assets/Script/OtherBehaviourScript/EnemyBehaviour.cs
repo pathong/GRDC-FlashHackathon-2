@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
@@ -10,10 +11,14 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float pushForce;
     [SerializeField] private float interval;
     [SerializeField] private Color enemyCol;
+
+    [SerializeField] private float happinessIncrement;
+    [SerializeField] private StatSO stat;
     private void OnEnable() {
         player = GameObject.FindGameObjectWithTag("Player");
         this.GetComponent<SpriteRenderer>().color = enemyCol;
         StartCoroutine(push());
+        StartCoroutine(DecreaseBoring());
     }
 
     IEnumerator push(){
@@ -28,6 +33,13 @@ public class EnemyBehaviour : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().AddForce(dir*pushForce);
             }        
 
+            yield return wait;
+        }
+    }
+    IEnumerator DecreaseBoring(){
+        WaitForSeconds wait = new WaitForSeconds(10);
+        while(true){
+            stat.ChangeHappiness(happinessIncrement);
             yield return wait;
         }
     }

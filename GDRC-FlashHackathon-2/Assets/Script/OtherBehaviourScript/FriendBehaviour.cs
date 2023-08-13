@@ -4,7 +4,7 @@ using UnityEngine;
 public class FriendBehaviour : MonoBehaviour
 {
     [SerializeField] private StatSO stat;
-    [SerializeField] private float decrement;
+    [SerializeField] private float happinessIncrement;
     [SerializeField] private float interval;
     [SerializeField] private Color friendCol;
     
@@ -16,7 +16,7 @@ public class FriendBehaviour : MonoBehaviour
     IEnumerator DecreaseBoring(){
         WaitForSeconds wait = new WaitForSeconds(interval);
         while(true){
-            stat.Boring -= decrement;
+            stat.ChangeHappiness(happinessIncrement);
             yield return wait;
         }
     }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcab97ce51cb7e7428c40ad40f6850d7, type: 3}
   m_Name: CurrentStat
   m_EditorClassIdentifier: 
-  Boring: 100
+  happiness: 100
   money: 0
-  normal: 100
-  enemy: 0
-  friend: 0
+  normal: 96
+  enemy: 1
+  friend: 3
+  initialStat: {fileID: 11400000, guid: 437572aa876783147a5b84d25810a199, type: 2}

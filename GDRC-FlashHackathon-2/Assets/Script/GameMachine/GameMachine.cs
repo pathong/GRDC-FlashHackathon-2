@@ -25,7 +25,6 @@ public class GameMachine : MonoBehaviour
         rpsObj.SetActive(true);
     }
     public void ToMenu(){
-        rpsObj.SetActive(false);
         reward.SetActive(false);
         loose.SetActive(false);
 

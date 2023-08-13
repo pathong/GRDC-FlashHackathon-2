@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class GeneratePlayer : MonoBehaviour
 {
+    [SerializeField] private StatSO statSO;
     [SerializeField] private GameObject other;
     [SerializeField] private float radius;
     [SerializeField] private Transform origin;
-    [SerializeField] private int amount;
+
     private NameGenerator nameGenerator;
 
     private void Awake() {
@@ -18,6 +19,16 @@ public class GeneratePlayer : MonoBehaviour
 
     [ContextMenu("Generate")]
     public void Generate(){
+        GenerateEach(statSO.normal);
+        GenerateEach(statSO.enemy);
+        GenerateEach(statSO.friend);
+
+    }
+
+    public void GenerateEach(int amount){
+
+        if(amount == 0){return;}
+
         for (int i = 0; i < amount; i++)
         {
             Quaternion randomRot = new Quaternion(0,0,UnityEngine.Random.Range(-1f,1f),1);

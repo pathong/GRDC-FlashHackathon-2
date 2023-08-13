@@ -33,6 +33,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void MachineHandler(InputAction.CallbackContext context){
         GameObject machine = GameObject.FindGameObjectWithTag("Machine");
+        if(machine== null){return;}
         if(Vector2.Distance(machine.transform.position, this.transform.position) <= 2){
             machine.GetComponent<GameMachine>().Open();
         }

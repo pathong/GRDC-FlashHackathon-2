@@ -60,13 +60,20 @@ public class GameMachine : MonoBehaviour
         panel.SetActive(false);
         loose.SetActive(false);
         reward.SetActive(false);
+
         isStart = false;
     }
 
     public void GameOver(){
+        // Change to end Scene.
+        Loader.Load(Loader.Scene.DayScene);
 
     }
 
+    public void ToSleep(){
+        statSO.ChangeHappiness(-10);
+        Loader.Load(Loader.Scene.DayScene);
+    }
 
     
 }

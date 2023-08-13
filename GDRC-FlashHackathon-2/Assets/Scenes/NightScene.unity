@@ -291,11 +291,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &51681645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8808433204191264146, guid: abbf6369ed3b3e44294bedbb4de422fc, type: 3}
-  m_PrefabInstance: {fileID: 243900826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76149278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,18 +5220,6 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 1209970363}
-    - target: {fileID: 6576541503530724523, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
-      propertyPath: dialouge1
-      value: 
-      objectReference: {fileID: 51681645}
-    - target: {fileID: 6576541503530724523, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
-      propertyPath: dialouge2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6576541503530724523, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
-      propertyPath: dialouge2Txt
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9218866474731485636, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 431.33093
@@ -5278,8 +5261,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3897395042812100298, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29a7a3b69711e3a47b690ff17f2b1fe1, type: 3}
@@ -5942,41 +5924,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 161259794157545709, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 796.466
-      objectReference: {fileID: 0}
-    - target: {fileID: 161259794157545709, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 51.339
-      objectReference: {fileID: 0}
-    - target: {fileID: 161259794157545709, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -530.848
-      objectReference: {fileID: 0}
-    - target: {fileID: 161259794157545709, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 489.331
-      objectReference: {fileID: 0}
     - target: {fileID: 2690834655489990600, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_Name
       value: UICanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3789500299305479950, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 377.132
-      objectReference: {fileID: 0}
-    - target: {fileID: 3789500299305479950, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 86.789
-      objectReference: {fileID: 0}
-    - target: {fileID: 3789500299305479950, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -740.5139
-      objectReference: {fileID: 0}
-    - target: {fileID: 3789500299305479950, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 411.605
       objectReference: {fileID: 0}
     - target: {fileID: 4135242645820275529, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_Pivot.x
@@ -6065,30 +6015,6 @@ PrefabInstance:
     - target: {fileID: 4604247136072285176, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4857337959164126601, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -4.9999695
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989101299990827375, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989101299990827375, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 4989101299990827375, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 6382769335804202087, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_fontSize
-      value: 79.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6382769335804202087, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 79.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

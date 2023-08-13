@@ -13,7 +13,10 @@ public class EventSystem : MonoBehaviour
 
     private bool stopping = false;
     private int eventStartTime;
-
+    public enum DayEvent
+    {
+        Question, RunBars, CollectChocolate
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -131,7 +134,7 @@ public class EventSystem : MonoBehaviour
 
         if (eventName.Equals("day"))
         {
-            duration = 05;
+            duration = 5;
         }
         else if (eventName.Equals("chooseBuff"))
         {

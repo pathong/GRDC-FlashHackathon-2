@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using System.Diagnostics;
 
 public class DialougeManger : MonoBehaviour
 {
@@ -20,14 +21,16 @@ public class DialougeManger : MonoBehaviour
         instance = this;
     }
 
-    public void StartFriendDialouge(PlayerInteraction player, OtherBehaviour other){
-        currentOther = other;
+    public void StartFriendDialouge(PlayerInteraction player, OtherBehaviour other) { 
+        this.currentOther = other;
+        UnityEngine.Debug.Log(currentOther);
         playerInteraction = player;
         dialouge1.SetActive(true);
     }
     public void D1D2(){
         dialouge1.SetActive(false);
-        switch(currentOther.type){
+        UnityEngine.Debug.Log(currentOther);
+        switch (currentOther.type){
             case E_FriendType.enemy:
                 dialouge2Txt.text = hateSpeech;
                 break;

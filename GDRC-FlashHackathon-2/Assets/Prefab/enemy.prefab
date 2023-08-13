@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 663427884849159666}
   - component: {fileID: 5301070201164829248}
   - component: {fileID: 5984624264626279889}
+  - component: {fileID: 5232065145681936634}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Other
@@ -148,15 +149,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8348475629168643967}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.9738912, w: 0.22701517}
+  m_LocalRotation: {x: 0, y: 0, z: 0.97389084, w: 0.22701688}
   m_LocalPosition: {x: 1.038588, y: -0.5869627, z: 0}
-  m_LocalScale: {x: 0.46967, y: 0.46967, z: 0.46967}
+  m_LocalScale: {x: 0.1849091, y: 0.1849091, z: 0.1849091}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4102236548117335478}
   - {fileID: 3826289246743567538}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 153.757}
 --- !u!212 &8375050937379414075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -197,8 +198,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -997276450, guid: d351caef33e6e444c8b41978d9a47b88, type: 3}
   m_Color: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -251,7 +252,8 @@ MonoBehaviour:
   moveRan: {fileID: 5907154898491472331}
   rotateRan: {fileID: 1422362790600771215}
   moveSpeed: {x: 25, y: 70}
-  rotateSpeed: {x: 100, y: 200}
+  rotateSpeed: {x: 10, y: 30}
+  animator: {fileID: 5232065145681936634}
 --- !u!114 &5907154898491472331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,12 +343,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 2.2
 --- !u!114 &663427884849159666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,3 +399,24 @@ MonoBehaviour:
   enemyCol: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
   happinessIncrement: -0.2
   stat: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}
+--- !u!95 &5232065145681936634
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348475629168643967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9692726e75bafa4eaeb0b236476549d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

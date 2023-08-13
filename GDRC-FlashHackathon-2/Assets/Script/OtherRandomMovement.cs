@@ -8,7 +8,8 @@ public class OtherRandomMovement : MonoBehaviour
     [SerializeField] RandomTimer moveRan;
     [SerializeField] RandomTimer rotateRan;
     [SerializeField] UnityEngine.Vector2 moveSpeed;
-    [SerializeField] UnityEngine.Vector2 rotateSpeed; 
+    [SerializeField] UnityEngine.Vector2 rotateSpeed;
+    public Animator animator;
 
 
     Rigidbody2D rb;
@@ -16,9 +17,15 @@ public class OtherRandomMovement : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        float speed = rb.velocity.magnitude;
+        animator.SetFloat("speed", speed);
+    }
+
 
     public void OnMoveTimerHandler(){
-        rb.AddForce(transform.right* UnityEngine.Random.Range(moveSpeed.x, moveSpeed.y));
+        rb.AddForce(-transform.up * UnityEngine.Random.Range(moveSpeed.x, moveSpeed.y));
         moveRan.Start();
     }
     public void OnrotateTimerHandler(){

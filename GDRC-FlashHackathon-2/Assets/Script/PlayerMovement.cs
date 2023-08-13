@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float rotateSpeed;
     public PlayerInput playerinput;
+    public Animator animator;
 
     private InputAction move; 
     private Vector2 moveDir;
@@ -30,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() {
         moveDir = move.ReadValue<Vector2>();
-
+        float speed = rb.velocity.magnitude;
+        animator.SetFloat("speed", speed);
     }
 
     private void FixedUpdate() {

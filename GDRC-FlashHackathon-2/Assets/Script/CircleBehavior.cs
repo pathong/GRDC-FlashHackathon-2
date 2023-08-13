@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class CircleBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private StatSO stat;
 
     public void Shrink(float amount)
     {
@@ -31,6 +21,8 @@ public class CircleBehavior : MonoBehaviour
     {
         if(collision.CompareTag("Other"))
         {
+            OtherBehaviour other = collision.GetComponent<OtherBehaviour>();
+            stat.DecrementPlayer(1,other.type);
             Destroy(collision.gameObject);
         }
         else if (collision.CompareTag("Player"))

@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DayScenes.unity
     guid: 32294d23b24f48d4b8ca2f659e294239
+  - enabled: 1
+    path: Assets/Scenes/Question.unity
+    guid: 6a8364ac6014ad04e950ab864c9449fc
+  - enabled: 1
+    path: Assets/Scenes/NightScene.unity
+    guid: fb6a1f5e3cfc36b4bbea37b220029789
+  - enabled: 1
+    path: "Assets/Scenes/Run\u0E3ABars.unity"
+    guid: e35704858adc7ab42a3555480a9bdd13
+  - enabled: 1
+    path: Assets/Scenes/CollectChocolate.unity
+    guid: d54413fa1a1161c41bd747812ac4d96b
   m_configObjects: {}

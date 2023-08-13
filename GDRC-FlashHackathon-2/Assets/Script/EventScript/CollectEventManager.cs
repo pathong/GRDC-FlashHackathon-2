@@ -74,7 +74,7 @@ public class CollectEventManager : MonoBehaviour
 
     private void EndEvent()
     {
-
+        Loader.Load(Loader.Scene.NightScene);
     }
 
     public void AddScore()

@@ -63,6 +63,7 @@ public class RunEvent : MonoBehaviour
     private void EndEvent()
     {
 
+        Loader.Load(Loader.Scene.NightScene);
     }
 
     // Update is called once per frame

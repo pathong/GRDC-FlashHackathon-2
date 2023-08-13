@@ -11,6 +11,8 @@ public class DialougeManger : MonoBehaviour
     [SerializeField] private TMP_Text dialouge2Txt;
     [SerializeField] private string friendSpeech, hateSpeech;
     public static DialougeManger instance;
+    private OtherBehaviour currentOther;
+    private PlayerInteraction playerInteraction;
     private void Awake() {
         if(instance!=null){
             Destroy(this);
@@ -18,16 +20,29 @@ public class DialougeManger : MonoBehaviour
         instance = this;
     }
 
-    public void StartFriendDialouge(GameObject player, GameObject other){
+    public void StartFriendDialouge(PlayerInteraction player, OtherBehaviour other){
+        currentOther = other;
+        playerInteraction = player;
         dialouge1.SetActive(true);
     }
     public void D1D2(){
         dialouge1.SetActive(false);
-        float rand = Random.Range(-1f,1f);
-        dialouge2Txt.text = (rand > 0) ? friendSpeech : hateSpeech; 
+        switch(currentOther.type){
+            case E_FriendType.enemy:
+                dialouge2Txt.text = hateSpeech;
+                break;
+            case E_FriendType.friend:
+                dialouge2Txt.text = friendSpeech;
+                break;
+        }
         dialouge2.SetActive(true);
     }
     public void EndD2(){
         dialouge2.SetActive(false);
+        currentOther.FinishDialouge();
+        playerInteraction.FinishDialouge();
+        currentOther = null;
+
+
     }
 }

@@ -9,12 +9,14 @@ public class OtherBehaviour : MonoBehaviour
     public string Name;
     public E_FriendType type = E_FriendType.normal;
     [SerializeField] private float rotationSpeed = 1;
+    public StatSO statSO;
 
-    public void StartInteract(GameObject player){
+    public void StartInteract(PlayerInteraction player){
         this.GetComponent<OtherRandomMovement>().enabled = false;
         FaceToPlayer(player.transform);
-
-        DialougeManger.instance.StartFriendDialouge(player, this.gameObject);
+        type = RandomType();
+        
+        DialougeManger.instance.StartFriendDialouge(player, this);
     }
 
     private void FaceToPlayer(Transform target){
@@ -24,5 +26,24 @@ public class OtherBehaviour : MonoBehaviour
         transform.rotation = targetRotation;
         // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
+    public void FinishDialouge(){
+
+        switch(type){
+            case E_FriendType.enemy:
+                this.gameObject.GetComponent<EnemyBehaviour>().enabled = true;
+                statSO.ChangeType(E_FriendType.enemy);
+                break;
+            case E_FriendType.friend:
+                this.gameObject.GetComponent<FriendBehaviour>().enabled = true;
+                statSO.ChangeType(E_FriendType.friend);
+                break;
+        }
+    }
+    private E_FriendType RandomType(){
+        float rand = Random.Range(-1f,1f);
+        return (rand > 0)? E_FriendType.enemy : E_FriendType.friend;
+
+    }
+
 
 }

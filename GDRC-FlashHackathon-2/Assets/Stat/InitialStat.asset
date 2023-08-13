@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boring: 0
   money: 0
-  normal: 0
+  normal: 100
   enemy: 0
   friend: 0
+  initialStat: {fileID: 11400000}

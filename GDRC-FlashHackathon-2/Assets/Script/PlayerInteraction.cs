@@ -27,10 +27,10 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TalkHandler(InputAction.CallbackContext context){
         GameObject other = FindNearest(5);
-        if(other != null){
+        if(other != null && other.GetComponent<OtherBehaviour>().type == E_FriendType.normal){
             //interact
-            other.GetComponent<OtherBehaviour>().StartInteract(this.gameObject);
-            // talkInput.Disable();
+            other.GetComponent<OtherBehaviour>().StartInteract(this);
+            talkInput.Disable();
         }
     }
     private void PushHandler(InputAction.CallbackContext context){
@@ -57,7 +57,10 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-        Debug.Log(nearestObj.name);
         return nearestObj;
+    }
+
+    public void FinishDialouge(){
+        talkInput.Enable();
     }
 }

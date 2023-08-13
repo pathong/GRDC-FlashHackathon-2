@@ -19,7 +19,7 @@ public class EventSystem : MonoBehaviour
     {
         duration = 0;
         stopping = true;
-        StartCoroutine(startTimer());
+        StartCoroutine(StartTimer());
         StartEvent("day");
     }
 
@@ -37,7 +37,7 @@ public class EventSystem : MonoBehaviour
         else if(pos.x < 0 && pos.y < 0) return 4;
         else return 1;
     }
-    private IEnumerator startTimer()
+    private IEnumerator StartTimer()
     {
         while (true)
         {

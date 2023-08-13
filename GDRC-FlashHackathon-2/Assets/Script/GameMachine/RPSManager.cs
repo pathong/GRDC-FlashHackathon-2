@@ -25,19 +25,19 @@ public class RPSManager : MonoBehaviour
             case "r":
                 playerImg.sprite = r;
                 if(randChoose == "p"){mrbreastScore++;mbImg.sprite=p;}
-                if(randChoose == "s"){playerScore++;mbImg.sprite=s;}
+                else if(randChoose == "s"){playerScore++;mbImg.sprite=s;}
                 else{mbImg.sprite=r;}
                 break;
             case "p":
                 playerImg.sprite = p;
                 if(randChoose == "s"){mrbreastScore++;mbImg.sprite=s;}
-                if(randChoose == "r"){playerScore++;mbImg.sprite=r;}
+                else if(randChoose == "r"){playerScore++;mbImg.sprite=r;}
                 else{mbImg.sprite=p;}
                 break;
             case "s":
                 playerImg.sprite = s;
                 if(randChoose == "r"){mrbreastScore++;mbImg.sprite=r;}
-                if(randChoose == "p"){playerScore++;mbImg.sprite=p;}
+                else if(randChoose == "p"){playerScore++;mbImg.sprite=p;}
                 else{mbImg.sprite=s;}
                 break;
         }
@@ -46,9 +46,11 @@ public class RPSManager : MonoBehaviour
 
         if(playerScore == 3){
             //player win.
+            this.GetComponent<GameMachine>().ToReward();
         }
         if(mrbreastScore== 3){
             //mrBeast win.
+            this.GetComponent<GameMachine>().ToLoose();
         }
 
     }

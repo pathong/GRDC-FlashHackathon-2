@@ -815,6 +815,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Machine"",
+                    ""type"": ""Button"",
+                    ""id"": ""2fb9045e-d86a-4a0f-89ca-d4d4a1c68372"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -837,6 +846,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Push"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0819b3c4-61ec-4029-8f4a-0a2adacc9097"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Machine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -927,6 +947,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Interaction = asset.FindActionMap("Interaction", throwIfNotFound: true);
         m_Interaction_Talk = m_Interaction.FindAction("Talk", throwIfNotFound: true);
         m_Interaction_Push = m_Interaction.FindAction("Push", throwIfNotFound: true);
+        m_Interaction_Machine = m_Interaction.FindAction("Machine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1170,12 +1191,14 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private List<IInteractionActions> m_InteractionActionsCallbackInterfaces = new List<IInteractionActions>();
     private readonly InputAction m_Interaction_Talk;
     private readonly InputAction m_Interaction_Push;
+    private readonly InputAction m_Interaction_Machine;
     public struct InteractionActions
     {
         private @PlayerInput m_Wrapper;
         public InteractionActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Talk => m_Wrapper.m_Interaction_Talk;
         public InputAction @Push => m_Wrapper.m_Interaction_Push;
+        public InputAction @Machine => m_Wrapper.m_Interaction_Machine;
         public InputActionMap Get() { return m_Wrapper.m_Interaction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1191,6 +1214,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Push.started += instance.OnPush;
             @Push.performed += instance.OnPush;
             @Push.canceled += instance.OnPush;
+            @Machine.started += instance.OnMachine;
+            @Machine.performed += instance.OnMachine;
+            @Machine.canceled += instance.OnMachine;
         }
 
         private void UnregisterCallbacks(IInteractionActions instance)
@@ -1201,6 +1227,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Push.started -= instance.OnPush;
             @Push.performed -= instance.OnPush;
             @Push.canceled -= instance.OnPush;
+            @Machine.started -= instance.OnMachine;
+            @Machine.performed -= instance.OnMachine;
+            @Machine.canceled -= instance.OnMachine;
         }
 
         public void RemoveCallbacks(IInteractionActions instance)
@@ -1286,5 +1315,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     {
         void OnTalk(InputAction.CallbackContext context);
         void OnPush(InputAction.CallbackContext context);
+        void OnMachine(InputAction.CallbackContext context);
     }
 }

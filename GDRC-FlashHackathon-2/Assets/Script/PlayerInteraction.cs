@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public PlayerInput playerinput;
     private InputAction talkInput;
     private InputAction pushInput;
+    private InputAction MachineInput;
 
     [SerializeField] private float interactionRange;
     [SerializeField] private float pushForce;
@@ -23,6 +25,17 @@ public class PlayerInteraction : MonoBehaviour
         pushInput = playerinput.Interaction.Push;
         pushInput.Enable();
         pushInput.performed += PushHandler;
+
+        MachineInput = playerinput.Interaction.Machine;
+        MachineInput.Enable();
+        MachineInput.performed += MachineHandler;
+
+    }
+    private void MachineHandler(InputAction.CallbackContext context){
+        GameObject machine = GameObject.FindGameObjectWithTag("Machine");
+        if(Vector2.Distance(machine.transform.position, this.transform.position) <= 2){
+            machine.GetComponent<GameMachine>().ToMenu();
+        }
     }
 
     private void TalkHandler(InputAction.CallbackContext context){

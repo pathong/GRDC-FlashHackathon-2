@@ -58,6 +58,8 @@ public class GameMachine : MonoBehaviour
     public void Exit(){
         menuObj.SetActive(false);
         panel.SetActive(false);
+        loose.SetActive(false);
+        reward.SetActive(false);
         isStart = false;
     }
 

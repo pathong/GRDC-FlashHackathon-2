@@ -7,7 +7,9 @@ public class CollectEventManager : MonoBehaviour
 {
     public int score, duration;
     public TMP_Text timeText, scoreText;
-    public GameObject circle;
+    public GameObject circle, chocolate;
+
+    private int MIN_CHOCOLATE = 100, numChocolate = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,10 @@ public class CollectEventManager : MonoBehaviour
             {
                 EndEvent();
             }
+            if (numChocolate < MIN_CHOCOLATE)
+            {
+                GenerateChocolate(1);
+            }
             UpdateText();
         }
         
@@ -41,7 +47,23 @@ public class CollectEventManager : MonoBehaviour
 
     private void GenerateChocolate(int num)
     {
+        float Radius = circle.GetComponent<CircleCollider2D>().radius;
+        Radius *= circle.transform.localScale.x;
 
+        for(int i = 0; i < num; i++)
+        {
+            float x = Random.Range(-Radius, Radius), y = Random.Range(-Radius, Radius);
+            while (Mathf.Sqrt(x*x + y*y) >= Radius)
+            {
+                x = Random.Range(-Radius, Radius);
+                y = Random.Range(-Radius, Radius);
+            }
+
+            GameObject newChocolate = Instantiate(chocolate);
+            newChocolate.transform.position = new Vector3(x, y, 0);
+            numChocolate += 1;
+        }
+        
     }
 
     private void UpdateText()
@@ -59,5 +81,6 @@ public class CollectEventManager : MonoBehaviour
     {
         score += 1;
         UpdateText();
+        numChocolate -= 1;
     }
 }

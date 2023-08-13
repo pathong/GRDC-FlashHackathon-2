@@ -2919,7 +2919,8 @@ MonoBehaviour:
   duration: 0
   timeText: {fileID: 998665694}
   scoreText: {fileID: 1962470310}
-  circle: {fileID: 0}
+  circle: {fileID: 58715974}
+  chocolate: {fileID: 3520752410346814757, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
 --- !u!4 &2062009976
 Transform:
   m_ObjectHideFlags: 0
@@ -3114,67 +3115,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &3457638837461513228
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0682
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1684411868348113375, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3520752410346814757, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_Name
-      value: ChocolateBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8092044232884381972, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7bc03d59dfa72d64b8d4f4d37216eba3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3184,6 +3124,5 @@ SceneRoots:
   - {fileID: 58715978}
   - {fileID: 1058177453}
   - {fileID: 506155313}
-  - {fileID: 3457638837461513228}
   - {fileID: 2062009976}
   - {fileID: 520561092}

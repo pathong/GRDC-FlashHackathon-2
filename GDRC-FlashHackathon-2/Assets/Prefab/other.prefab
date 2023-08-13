@@ -249,7 +249,7 @@ MonoBehaviour:
   Name: 
   type: 0
   rotationSpeed: 1
-  statSO: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}
+  statSO: {fileID: 11400000, guid: 8fd5a3a69e3de9541af93b6b93eca1d1, type: 2}
 --- !u!114 &4234300755649803917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04545f2e26dd9a46b6aa19e264f7ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}
+  stat: {fileID: 11400000, guid: 8fd5a3a69e3de9541af93b6b93eca1d1, type: 2}
   happinessIncrement: 0
   interval: 10
   friendCol: {r: 0.38047346, g: 0.74365884, b: 0.8490566, a: 1}
@@ -283,7 +283,7 @@ MonoBehaviour:
   interval: 2
   enemyCol: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
   happinessIncrement: 0
-  stat: {fileID: 11400000, guid: e2ed7f2c7eb4d894890bc474baf5e58b, type: 2}
+  stat: {fileID: 11400000, guid: 8fd5a3a69e3de9541af93b6b93eca1d1, type: 2}
 --- !u!95 &7581087542076288856
 Animator:
   serializedVersion: 5

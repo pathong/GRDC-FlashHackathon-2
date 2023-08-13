@@ -5925,7 +5925,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 161259794157545709, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_SizeDelta.x
       value: 796.466
@@ -5942,13 +5941,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -490
       objectReference: {fileID: 0}
-=======
->>>>>>> 602d777ffdf0871e88fd8909bde8488787c4de9f
     - target: {fileID: 2690834655489990600, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_Name
       value: BoringBar
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 3789500299305479950, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_SizeDelta.x
       value: 377.132
@@ -5965,8 +5961,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -427
       objectReference: {fileID: 0}
-=======
->>>>>>> 602d777ffdf0871e88fd8909bde8488787c4de9f
     - target: {fileID: 4135242645820275529, guid: 7e194d7ff041a4341b54877f4f3af625, type: 3}
       propertyPath: m_Pivot.x
       value: 0

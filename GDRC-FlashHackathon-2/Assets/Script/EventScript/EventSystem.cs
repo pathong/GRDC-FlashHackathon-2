@@ -90,7 +90,7 @@ public class EventSystem : MonoBehaviour
 
         if (eventName.Equals("day"))
         {
-            duration = 5;
+            duration = 4;
             if (statSO.isFirstPlay)
             {
                 string[] msg = { "ผมเอา100คนมาไว้ในวงกลมใหญ่ยักษ์นี้ และคนสุดท้ายที่ออกจากวงจะได้ 500,000 บาท",
